@@ -1,0 +1,136 @@
+.footer {
+  background: var(--secondary);
+  padding: 50px 0px 5px 0px;
+  margin-top: 10rem;
+}
+
+.foot-1 {
+  padding-right: 0px;
+}
+
+.foot-1 p {
+  color: var(--font);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+
+.foot-1 img {
+  width: 50%;
+}
+
+.foot {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.foot img {
+  width: 100%;
+  float: right;
+}
+
+ul li {
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: var(--font);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+ul li a:hover {
+  text-decoration: none;
+  color: var(--white);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+ul li a i {
+  color: var(--font);
+  margin-right: 5px;
+}
+
+.copyright {
+  border-top: 1px solid var(--secondary-2);
+  padding: 15px 0px;
+  margin-top: 40px;
+}
+.copyright a {
+  color: var(--white);
+  font-size: 0.9rem;
+  padding-left: 0px;
+  text-decoration: none;
+}
+.copyright a:hover {
+  color: var(--white);
+}
+
+// Media
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 595px) {
+  .foot-1 {
+    padding: 30px;
+    margin-top: 0px;
+  }
+
+  .foot-1 img {
+    width: 50%;
+  }
+
+  .foot-social {
+    margin-top: 15px;
+  }
+  .foot-social img {
+    width: 30px;
+    margin-right: 15px;
+  }
+
+  .foot {
+    margin-top: 0px;
+    padding: 10px 30px;
+  }
+
+  .foot img {
+    width: 100%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media screen and (min-width: 600px) and (max-width: 799px) {
+  .foot-1 {
+    padding: 30px;
+    margin-top: 0px;
+  }
+
+  .foot-1 img {
+    width: 50%;
+  }
+
+  .foot-social {
+    margin-top: 15px;
+  }
+  .foot-social img {
+    width: 25px;
+    margin-right: 15px;
+  }
+
+  .foot {
+    margin-top: 0px;
+    padding: 10px 30px;
+  }
+
+  .foot img {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1099px) {
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1299px) {
+}

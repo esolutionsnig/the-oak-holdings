@@ -1,0 +1,57 @@
+<section class="footer">
+  <div class="app-container">
+    <div class="row">
+      <div class="col-d-2 col-t-2">
+        <div class="foot-1">
+          <img src="../../../../assets/images/logo.png" alt="">
+        </div>
+      </div>
+      <div class="col-d-3 col-t-3">
+        <div class="foot">
+          <ul>
+            <li *ngFor="let item of menu; let i = index">
+              <a (click)="goToPage(item.url, i)">{{ item.title }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-d-3 col-t-3">
+        <div class="foot">
+          <ul>
+            <li *ngFor="let item of sisterFirms">
+              <a [href]="item.url" target="_blank">{{ item.title }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-d-4 col-t-4">
+        <div class="foot">
+          <ul>
+            <li *ngFor="let item of contacts">
+              <a [href]="'mailto:' + item.url">
+                <i [class]="item.icon"></i>
+                {{ item.title }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="row copyright">
+      <div class="col-d-4 col-t-4">
+        <a routerLink="/privacy-policy">Privacy Policy</a>
+      </div>
+      <div class="col-d-4 col-t-4">
+        <div class="social">
+          <a *ngFor="let item of socialMedia" [href]="item.url" target="_blank">
+            <i [class]="item.icon"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-d-4 col-t-4">
+        <a routerLink="/"> © The Oak Holdings {{ year }}. All Rights Reserved</a>
+      </div>
+    </div>
+  </div>
+</section>

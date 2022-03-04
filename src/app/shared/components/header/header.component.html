@@ -1,0 +1,30 @@
+<header class="header" id="navigation-menu">
+  <nav class="navbar">
+    <div class="app-container space-between">
+      <a routerLink="/" class="nav-logo js-anchor-link">
+        <img [src]="logo" alt="The Oak Holdings" />
+      </a>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
+  <div id="menuModal" class="modal">
+    <div class="menu-modal-content">
+      <ul>
+        <li *ngFor="let item of menu; let i = index" class="nav-links">
+          <a (click)="goToPage(item.url, i)" [ngClass]="{'active': i == activeIndex}">{{ item.title }}</a>
+        </li>
+      </ul>
+      <div class="social">
+        <a *ngFor="let item of socialMedia" [href]="item.url" target="_blank">
+          <i [class]="item.icon"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</header>

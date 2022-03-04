@@ -1,0 +1,151 @@
+<div id="home">
+  <app-hero-carousel [images]="slides" [autoSlide]="false"></app-hero-carousel>
+</div>
+
+<section id="whoWeAre">
+  <div class="app-container">
+    <div class="row">
+      <div class="col-d-6 col-t-6">
+        <div class="header">
+          <h3>
+            Welcome to <br>
+            <span>The Oak Holdings</span>
+          </h3>
+        </div>
+        <div class="body">
+          <p>When we say we are your partner in building a more robust future, we mean it. Through years of experience
+            and sectoral expertise, we've become one of the few industry leaders in the Real Estate, Venture Capital,
+            and Digital Banking sectors.</p>
+
+          <p class="highlight">That's what The Oak Advantage is about.</p>
+
+          <div class="author-info">
+            <div class="ceo-name">Olukayode Olusanya </div>
+            <span class="designation small bold">CEO</span>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-d-6 col-t-6">
+        <iframe class="vid" src="https://www.youtube.com/embed/6sbxwoClRSo" title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section id="whatWeDo">
+  <div class="app-container">
+    <div class="row">
+      <div class="col-d-12 col-t-12">
+        <div class="content">
+          <div class="header">
+            <h3>
+              What <br>
+              <span>We Do</span>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-d-4 col-t-4" *ngFor="let item of services">
+        <div class="card">
+          <figure>
+            <img [src]="item.imageSrc" alt="">
+          </figure>
+          <section class="details">
+            <div class="min-details">
+              <h5>{{ item.title }}</h5>
+            </div>
+
+            <div class="options" [innerHtml]="item.desc"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contactUs">
+  <div class="app-container">
+    <div class="row">
+      <div class="col-d-6 col-t-6">
+        <div class="content">
+          <div class="header">
+            <h3>
+              Office <br>
+              <span>Contact Information</span>
+            </h3>
+          </div>
+          <div class="body">
+            <div class="contact-card" *ngFor="let item of contacts">
+              <a [href]="'mailto:' + item.url">
+                <i [class]="item.icon"></i>
+                {{ item.title }}
+              </a>
+            </div>
+
+            <div class="map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.614590094755!2d3.4164115146364162!3d6.44350792587609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2b43625bdd%3A0xbaa60297be99e221!2s4%20Ribadu%20Rd%2C%20Ikoyi%20106104%2C%20Lagos!5e0!3m2!1sen!2sng!4v1633594117762!5m2!1sen!2sng"
+                class="map-frame" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-d-6 col-t-6">
+        <div class="form-area">
+          <p class="desc">Fill the form below to send us a message. We promise to maintain high level of privacy.</p>
+          <div class="form">
+            <div class="row">
+              <div class="col-d-12 col-t-12">
+                <div class='form-area-left'>
+                  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+                    <input type="text" class="app-input-line" placeholder="Your first name" #firstName
+                      formControlName="firstName" required (ngModelChange)="checkFirstName()">
+                    <app-input-checker [checker]="noFirstName" [message]="noFirstNameMessage"></app-input-checker>
+
+                    <input type="text" class="app-input-line" placeholder="Your last name" #lastName
+                      formControlName="lastName" required (ngModelChange)="checkLastName()">
+                    <app-input-checker [checker]="noLastName" [message]="noLastNameMessage"></app-input-checker>
+
+                    <input type="email" class="app-input-line" placeholder="Your email address" #email
+                      formControlName="email" required (ngModelChange)="checkEmail()">
+                    <app-input-checker [checker]="noEmail" [message]="noEmailMessage"></app-input-checker>
+
+                    <input type="text" class="app-input-line" placeholder="Your phone number" #phoneNumber
+                      formControlName="phoneNumber">
+
+                    <input type="text" class="app-input-line" placeholder="How did you hear about us" #source
+                      formControlName="source">
+
+                    <textarea type="text" class="app-input-line" placeholder="Your message " rows="10" #message
+                      formControlName="message" required (ngModelChange)="checkMessage()"></textarea>
+                    <app-input-checker [checker]="noMessage" [message]="noMessageMessage"></app-input-checker>
+
+                    <div class="btn-holder space-between">
+                      <p>&nbsp;</p>
+                      <button class="app-btn">
+                        <div *ngIf="isSubmitting">
+                          <i class="ri-loader-2-fill"></i>
+                          Sending
+                        </div>
+                        <div *ngIf="!isSubmitting">
+                          Send Message
+                        </div>
+                      </button>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
